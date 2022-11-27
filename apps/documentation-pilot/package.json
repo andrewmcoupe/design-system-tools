@@ -3,6 +3,7 @@
   "publisher": "andycoupe",
   "displayName": "Documentation Pilot",
   "license": "MIT",
+  "private": true,
   "description": "This VS Code extension is ideal for linking code to external documentation",
   "version": "0.0.1",
   "engines": {
@@ -11,6 +12,7 @@
   "categories": [
     "Visualization"
   ],
+  "icon": "media/thumbnail.png",
   "activationEvents": [
     "onLanguage:javascriptreact",
     "onLanguage:typescriptreact"
