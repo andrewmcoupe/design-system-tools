@@ -1,5 +1,5 @@
 {
-  "name": "@design-system-tools/documentation-pilot",
+  "name": "documentation-pilot",
   "publisher": "andycoupe",
   "displayName": "Documentation Pilot",
   "license": "MIT",
@@ -9,9 +9,20 @@
   "engines": {
     "vscode": "^1.73.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrewmcoupe/design-system-tools/tree/main/apps/documentation-pilot"
+  },
+  "bugs": {
+    "url": "https://github.com/andrewmcoupe/design-system-tools/issues"
+  },
   "categories": [
     "Visualization"
   ],
+  "vsce": {
+    "dependencies": true,
+    "yarn": false
+  },
   "icon": "media/thumbnail.png",
   "activationEvents": [
     "onLanguage:javascriptreact",
