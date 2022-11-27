@@ -1,0 +1,99 @@
+{
+  "name": "@design-system-tools/documentation-pilot",
+  "publisher": "andycoupe",
+  "displayName": "Documentation Pilot",
+  "license": "MIT",
+  "description": "This VS Code extension is ideal for linking code to external documentation",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.73.0"
+  },
+  "categories": [
+    "Visualization"
+  ],
+  "activationEvents": [
+    "onLanguage:javascriptreact",
+    "onLanguage:typescriptreact"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Documentation Pilot",
+      "properties": {
+        "documentation-pilot.data": {
+          "type": "object",
+          "default": false,
+          "description": "An object containing the documentation data for your design system.",
+          "properties": {
+            "yourItem?": {
+              "type": "object",
+              "default": {
+                "url": "https://your-design-system.com/yourItem"
+              },
+              "description": "An object containing the url to the documentation data.",
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "default": "https://your-design-system.com/yourItem",
+                  "description": "The url to the documentation data."
+                }
+              }
+            }
+          }
+        },
+        "documentation-pilot.packages": {
+          "type": "array",
+          "default": [
+            "@your-design-system/components"
+          ],
+          "description": "An array of packages where your items are located e.g. ['@my-package/components', '@my-package/icons']"
+        },
+        "documentation-pilot.webViewTabTitle": {
+          "type": "string",
+          "default": "Documentation Pilot",
+          "description": "The title of the webview tab."
+        },
+        "documentation-pilot.customLinkText": {
+          "type": "string",
+          "default": "View Documentation",
+          "description": "The text of the link to the documentation."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "documentation-pilot.viewComponentInWebView",
+        "title": "View Component in WebView"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:build": "esbuild --bundle --platform=\"node\" src/extension.ts --outfile=out/extension.js --external:vscode --format=cjs",
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "pnpm run compile && pnpm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@vscode/test-electron": "^2.2.0",
+    "@babel/core": "^7.19.1",
+    "@babel/parser": "^7.19.1",
+    "@babel/traverse": "^7.19.1",
+    "@babel/types": "^7.19.0",
+    "@types/babel__traverse": "^7.18.1",
+    "@types/vscode": "^1.73.0",
+    "@types/glob": "^8.0.0",
+    "@types/mocha": "^10.0.0",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
+    "eslint": "^8.26.0",
+    "esbuild": "^0.15.15",
+    "glob": "^8.0.3",
+    "mocha": "^10.1.0",
+    "typescript": "^4.8.4",
+    "@design-system-tools/documentation-pilot-parser": "workspace:*"
+  }
+}

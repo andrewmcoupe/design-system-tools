@@ -10,7 +10,8 @@
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "extension:build": "pnpm --filter '@design-system-tools/documentation-pilot' vscode:build"
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
@@ -18,7 +19,7 @@
     "turbo": "latest"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=16.0.0"
   },
   "dependencies": {},
   "packageManager": "pnpm@7.17.0"
