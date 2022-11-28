@@ -40,12 +40,6 @@ export function activate(context: vscode.ExtensionContext) {
     return;
   }
 
-  const document = vscode.window.activeTextEditor?.document;
-
-  if (!document) {
-    return;
-  }
-
   const onSettingsUpdated = vscode.workspace.onDidChangeConfiguration((e) => {
     if (e.affectsConfiguration("documentation-pilot.packages")) {
       packages = getPackagesConfig();
@@ -79,6 +73,12 @@ export function activate(context: vscode.ExtensionContext) {
       );
     }
   });
+
+  const document = vscode.window.activeTextEditor?.document;
+
+  if (!document) {
+    return;
+  }
 
   const traverseOptions: TraverseOptions = {
     ImportDeclaration(path) {

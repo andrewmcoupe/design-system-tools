@@ -5,7 +5,7 @@
   "license": "MIT",
   "private": true,
   "description": "This VS Code extension is ideal for linking code to external documentation",
-  "version": "0.2.2",
+  "version": "0.2.5",
   "engines": {
     "vscode": "^1.73.0"
   },
@@ -19,10 +19,6 @@
   "categories": [
     "Visualization"
   ],
-  "vsce": {
-    "dependencies": true,
-    "yarn": false
-  },
   "icon": "media/icon.png",
   "activationEvents": [
     "onLanguage:javascriptreact",
