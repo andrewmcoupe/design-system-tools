@@ -11,10 +11,10 @@
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "extension:build": "pnpm --filter '@design-system-tools/documentation-pilot' vscode:build"
+    "extension:build": "yarn workspace documentation-pilot run vscode:build"
   },
   "devDependencies": {
-    "eslint-config-custom": "workspace:*",
+    "eslint-config-custom": "*",
     "prettier": "latest",
     "turbo": "latest"
   },

@@ -5,7 +5,7 @@
   "license": "MIT",
   "private": true,
   "description": "This VS Code extension is ideal for linking code to external documentation",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "engines": {
     "vscode": "^1.73.0"
   },
@@ -23,7 +23,7 @@
     "dependencies": true,
     "yarn": false
   },
-  "icon": "media/thumbnail.png",
+  "icon": "media/icon.png",
   "activationEvents": [
     "onLanguage:javascriptreact",
     "onLanguage:typescriptreact"
@@ -81,8 +81,10 @@
     ]
   },
   "scripts": {
-    "vscode:build": "esbuild --bundle --platform=\"node\" src/extension.ts --outfile=out/extension.js --external:vscode --format=cjs",
-    "vscode:prepublish": "pnpm run compile",
+    "vscode:build": "esbuild --bundle --platform=\"node\" ./src/extension.ts --outfile=out/extension.js --external:vscode --format=cjs",
+    "vscode:prepublish": "npm run vscode:build -- --minify",
+    "vscode:package": "vsce package --yarn",
+    "vscode:publish": "vsce publish --yarn",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "pretest": "pnpm run compile && pnpm run lint",
@@ -107,6 +109,6 @@
     "glob": "^8.0.3",
     "mocha": "^10.1.0",
     "typescript": "^4.8.4",
-    "@design-system-tools/documentation-pilot-parser": "workspace:*"
+    "@design-system-tools/documentation-pilot-parser": "*"
   }
 }

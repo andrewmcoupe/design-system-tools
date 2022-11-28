@@ -13,7 +13,7 @@
     "@types/babel__traverse": "^7.18.1"
   },
   "devDependencies": {
-    "tsconfig": "workspace:*",
+    "tsconfig": "*",
     "typescript": "^4.5.3"
   }
 }
