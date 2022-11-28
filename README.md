@@ -4,7 +4,7 @@ This is a monorepo for a collection of tools to help you build and maintain a de
 
 ## What's inside?
 
-This turborepo uses [pnpm](https://pnpm.io) as a package manager. It includes the following packages/apps:
+This turborepo uses yarn as a package manager. It includes the following packages/apps:
 
 ### Apps and Packages
 
